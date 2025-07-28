@@ -175,7 +175,7 @@ There are several installation methods available: standalone binary, Docker imag
 
 ### Standalone binary
 
-1. Download and extract a standalone binary from the [release page](https://github.com/devsisters/mediamtx/releases) that corresponds to your operating system and architecture.
+1. Download and extract a standalone binary from the [release page](https://github.com/bluenviron/mediamtx/releases) that corresponds to your operating system and architecture.
 
 2. Start the server:
 
@@ -1536,7 +1536,7 @@ These are the recommended methods for each client:
 |FFmpeg|RTMP|unsupported|Passwords and query parameters are currently truncated to 1024 characters by FFmpeg, so it's impossible to use FFMPEG+RTMP+JWT|
 |GStreamer|RTSP|Password||
 |GStreamer|RTMP|Query parameter||
-|any|SRT|unsupported|SRT truncates passwords and query parameters to 512 characters, so it's impossible to use SRT+JWT. See [#3430](https://github.com/devsisters/mediamtx/issues/3430)|
+|any|SRT|unsupported|SRT truncates passwords and query parameters to 512 characters, so it's impossible to use SRT+JWT. See [#3430](https://github.com/bluenviron/mediamtx/issues/3430)|
 
 Here's a tutorial on how to setup the [Keycloak identity server](https://www.keycloak.org/) in order to provide JWTs:
 
@@ -2537,7 +2537,7 @@ If the OpenWrt device doesn't have enough resources to compile, you can [cross c
 
 ### Custom libcamera
 
-If you need to use a custom or external libcamera when interacting with the Raspberry Pi Camera, you have to compile [mediamtx-rpicamera](https://github.com/devsisters/mediamtx-rpicamera) before compiling the server. Instructions are present in the `mediamtx-rpicamera` repository.
+If you need to use a custom or external libcamera when interacting with the Raspberry Pi Camera, you have to compile [mediamtx-rpicamera](https://github.com/bluenviron/mediamtx-rpicamera) before compiling the server. Instructions are present in the `mediamtx-rpicamera` repository.
 
 ### Cross compile
 
@@ -2612,7 +2612,7 @@ All the code in this repository is released under the [MIT License](LICENSE). Co
 
 * all the Golang-based dependencies listed into the [go.mod file](go.mod), which are all released under either the MIT license, BSD 3-Clause license or Apache License 2.0.
 * hls.js, released under the [Apache License 2.0](https://github.com/video-dev/hls.js/blob/master/LICENSE).
-* mediamtx-rpicamera, which is released under the same license of _MediaMTX_ but includes some [third-party dependencies](https://github.com/devsisters/mediamtx-rpicamera?tab=readme-ov-file#license).
+* mediamtx-rpicamera, which is released under the same license of _MediaMTX_ but includes some [third-party dependencies](https://github.com/bluenviron/mediamtx-rpicamera?tab=readme-ov-file#license).
 
 ## Specifications
 
@@ -2641,7 +2641,7 @@ All the code in this repository is released under the [MIT License](LICENSE). Co
 * [gortsplib (RTSP library used internally)](https://github.com/bluenviron/gortsplib)
 * [gohlslib (HLS library used internally)](https://github.com/bluenviron/gohlslib)
 * [mediacommon (codecs and formats library used internally)](https://github.com/bluenviron/mediacommon)
-* [mediamtx-rpicamera (Raspberry Pi Camera component)](https://github.com/devsisters/mediamtx-rpicamera)
+* [mediamtx-rpicamera (Raspberry Pi Camera component)](https://github.com/bluenviron/mediamtx-rpicamera)
 * [datarhei/gosrt (SRT library used internally)](https://github.com/datarhei/gosrt)
 * [pion/webrtc (WebRTC library used internally)](https://github.com/pion/webrtc)
 * [pion/sdp (SDP library used internally)](https://github.com/pion/sdp)

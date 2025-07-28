@@ -1,6 +1,6 @@
 module github.com/devsisters/mediamtx
 
-go 1.24.0
+go 1.24.5
 
 require (
 	code.cloudfoundry.org/bytefmt v0.42.0
