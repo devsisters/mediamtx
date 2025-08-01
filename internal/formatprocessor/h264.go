@@ -10,8 +10,8 @@ import (
 	mch264 "github.com/bluenviron/mediacommon/v2/pkg/codecs/h264"
 	"github.com/pion/rtp"
 
-	"github.com/bluenviron/mediamtx/internal/logger"
-	"github.com/bluenviron/mediamtx/internal/unit"
+	"github.com/devsisters/mediamtx/internal/logger"
+	"github.com/devsisters/mediamtx/internal/unit"
 )
 
 // H264-related parameters
@@ -177,9 +177,6 @@ func (t *h264) remuxAccessUnit(au [][]byte) [][]byte {
 		case mch264.NALUTypeSPS, mch264.NALUTypePPS: // parameters: remove
 			continue
 
-		case mch264.NALUTypeAccessUnitDelimiter: // AUD: remove
-			continue
-
 		case mch264.NALUTypeIDR: // key frame
 			if !isKeyFrame {
 				isKeyFrame = true
@@ -211,9 +208,6 @@ func (t *h264) remuxAccessUnit(au [][]byte) [][]byte {
 
 		switch typ {
 		case mch264.NALUTypeSPS, mch264.NALUTypePPS:
-			continue
-
-		case mch264.NALUTypeAccessUnitDelimiter:
 			continue
 		}
 

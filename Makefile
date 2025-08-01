@@ -1,28 +1,10 @@
-BASE_IMAGE = golang:1.24-alpine3.20
-LINT_IMAGE = golangci/golangci-lint:v2.1.6
-NODE_IMAGE = node:20-alpine3.20
+.PHONY: login build push
 
-.PHONY: $(shell ls)
+login:
+	aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 870718863047.dkr.ecr.ap-northeast-1.amazonaws.com/gb-media-server
 
-help:
-	@echo "usage: make [action]"
-	@echo ""
-	@echo "available actions:"
-	@echo ""
-	@echo "  format           format source files"
-	@echo "  test             run tests"
-	@echo "  test-32          run tests on a 32-bit system"
-	@echo "  test-e2e         run end-to-end tests"
-	@echo "  lint             run linters"
-	@echo "  apidocs          generate api docs HTML"
-	@echo "  binaries         build binaries for all platforms"
-	@echo "  dockerhub        build and push images to Docker Hub"
-	@echo ""
-
-blank :=
-define NL
-
-$(blank)
-endef
-
-include scripts/*.mk
+build:
+	docker build --platform linux/amd64 -t 870718863047.dkr.ecr.ap-northeast-1.amazonaws.com/gb-media-server:latest .
+	
+push: login build
+	docker push 870718863047.dkr.ecr.ap-northeast-1.amazonaws.com/gb-media-server:latest
